@@ -1,0 +1,51 @@
+[인사]
+
+>> 사원
+- 사번(PK) 직급(NN) 이름(NN) 나이(NN) 
+- 성별(NN) 학력(NN) 생년월일(NN) 
+- 휴대폰번호(NN, UQ) 주소(NN) 입사일(NN)
+- 퇴사일 부서(DEFAULT '미정') 연봉(NN) 
+- 비고(N)
+
+-- Employee 
+(
+employee_number, position, name, age, 
+gender, academic_ability, birth, 
+tel_number, address, address_detail, join_date,
+resignation_date, department, annual_income,
+note
+)
+
+>> 부서(department)
+
+- 부서코드(PK) 부서명(NN) 부서장(NN) 부서전화번호(NN)
+
+[사원 등록 process]
+
+>> Input
+사용자로 부터 필수로 입력받아야 하는 데이터
+이름 나이 직책 성별 학력 생일 전화번호 주소 상세주소 입사일 연봉
+
+(퇴사일 부서 비고)
+
+>> Output
+성공 
+/ 실패 
+
+(
+# 입력값에 대한 검증 >> Controller (비즈니스 로직X)
+필수 값 중 빈 값이 있을 경우, 
+데이터 타입이 다를 경우, 
+데이터 크기가 클 경우,
+
+>> 실제 비즈니스 로직 
+
+# 프로세스 상 발생(예외처리에 대한 내용) >> Service 
+데이터베이스 접속 실패, 
+
+# 비즈니스 로직 상 발생(DB에 존재하는지 검증) >> Service
+동일한 전화번호가 있을 경우,
+존재하지 않는 부서코드를 입력했을 경우,
+)
+
+>> solid 중 단일 책임 원칙!!

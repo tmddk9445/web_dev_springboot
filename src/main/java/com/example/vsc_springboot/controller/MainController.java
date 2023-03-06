@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.vsc_springboot.dto.GetTestResponseDto;
 import com.example.vsc_springboot.dto.PostTestRequestDto;
-import com.example.vsc_springboot.dto.ResponseDto;
+import com.example.vsc_springboot.dto.response.ResponseDto;
 import com.example.vsc_springboot.service.MainService;
 
 //? 해당 클래스를 REST API로 사용되는 Controller로 지정 할 수 있음

@@ -1,4 +1,4 @@
-package com.example.vsc_springboot.dto;
+package com.example.vsc_springboot.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

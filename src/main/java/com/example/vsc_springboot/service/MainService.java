@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.vsc_springboot.dto.GetTestResponseDto;
 import com.example.vsc_springboot.dto.PostTestRequestDto;
-import com.example.vsc_springboot.dto.ResponseDto;
+import com.example.vsc_springboot.dto.response.ResponseDto;
 import com.example.vsc_springboot.entity.ExampleEntity;
 import com.example.vsc_springboot.repository.ExampleRepository;
 
@@ -98,7 +98,7 @@ public class MainService {
         //? 해당 테이블에 PK를 기준으로 레코드가 존재한다면 true 반환
         //? 존재하지 않는다면 false 반환
         boolean hasEntity = exampleRepository.existsById(0); 
-
+        
         //! deleteById(PK);
         //? 해당 테이블에 PK를 기준으로 특정 레코드를 삭제
         exampleRepository.deleteById(0);
