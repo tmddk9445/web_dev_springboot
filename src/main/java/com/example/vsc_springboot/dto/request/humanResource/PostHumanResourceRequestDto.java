@@ -60,8 +60,6 @@ public class PostHumanResourceRequestDto {
         private String resignationDate;
 
         //? 부서 코드
-        @NotBlank
-        @Length(min=0, max=5)
         private String department;
 
         //? 연봉

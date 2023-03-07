@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.example.vsc_springboot.dto.request.humanResource.PostHumanResourceRequestDto;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +21,7 @@ public class EmployeeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //? 사번
-    private int EmployeeNumber;
+    private int employeeNumber;
     //? 직급
     private String position;
     //? 이름
@@ -48,4 +50,21 @@ public class EmployeeEntity {
     private int annualIncome;
     //? 비고
     private String note;
+
+    public EmployeeEntity(PostHumanResourceRequestDto dto) {
+        this.position = dto.getPosition();
+        this.name = dto.getName();
+        this.age = dto.getAge();
+        this.gender = dto.getGender();
+        this.academicAbility = dto.getAcademicAbility();
+        this.birth = dto.getBirth();
+        this.telNumber = dto.getTelNumber();
+        this.Address = dto.getAddress();
+        this.AddressDetail = dto.getAddressDetail();
+        this.joinDate = dto.getJoinDate();
+        this.resignationDate = dto.getResignationDate();
+        this.department = dto.getDepartment();
+        this.annualIncome = dto.getAnnualIncome();
+        this.note = dto.getNote();
+    }
 }

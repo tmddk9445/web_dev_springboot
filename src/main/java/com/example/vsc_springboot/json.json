@@ -1,0 +1,14 @@
+{
+    "position": "사원",
+    "name": "서지훈",
+    "age": 31,
+    "gender": "남",
+    "academicAbiliyt": "대졸",
+    "birth": "930602",
+    "telNumber": "010-1111-2222",
+    "address": "부산시",
+    "addressDetail": "사하구",
+    "joinDate": "2023-03-07",
+    "annualIncome": 3000,
+    "dapartment": "AAA"
+}
