@@ -19,7 +19,7 @@ public class PostDepartmentResponseDto {
     public PostDepartmentResponseDto(DepartmentEntity departmentEntity) {
         this.departmentCode = departmentEntity.getDepartmentCode();
         this.name = departmentEntity.getName();
-        this.chief = departmentEntity.getCheif();
+        this.chief = departmentEntity.getChief();
         this.telNumber = departmentEntity.getTelNumber();
     }
     

@@ -28,7 +28,7 @@ public class HumanResourceController {
     private static final String GET_HUMAN_RESOURCE = "/{employeeNumber}";
 
     @PostMapping(POST_HUMAN_RESOURCE)
-    //? POST http://localhost:4040/apis/hr/
+    //? POST http://localhost:4080/apis/hr/
     public ResponseDto<PostHumanResourceResponseDto> postHumanResource(@Valid @RequestBody PostHumanResourceRequestDto requestBody) {
         ResponseDto<PostHumanResourceResponseDto> response = 
             humanResourceService.postHumanResource(requestBody);
@@ -36,7 +36,7 @@ public class HumanResourceController {
     }
 
     @GetMapping(GET_HUMAN_RESOURCE)
-    //? GET http://localhost:4040/apis/hr/사번
+    //? GET http://localhost:4080/apis/hr/사번
     public ResponseDto<GetHumanResourceResponseDto> getHumanResource(@PathVariable("employeeNumber") int employeeNumber) {
         ResponseDto<GetHumanResourceResponseDto> response =
             humanResourceService.getHumanResource(employeeNumber);
