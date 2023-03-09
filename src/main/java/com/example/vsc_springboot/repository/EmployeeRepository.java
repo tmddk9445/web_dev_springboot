@@ -9,7 +9,9 @@ import com.example.vsc_springboot.entity.EmployeeEntity;
 public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Integer>{
     
     public boolean existsByTelNumber(String telNumber);
+    public boolean existsByDepartment(String department);
 
     public EmployeeEntity findByEmployeeNumber(int employeeNumber);
+
     
 }

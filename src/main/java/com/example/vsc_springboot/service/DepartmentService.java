@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.vsc_springboot.common.constant.ResponseMessage;
 import com.example.vsc_springboot.dto.request.department.PostDepartmentRequestDto;
 import com.example.vsc_springboot.dto.response.ResponseDto;
+import com.example.vsc_springboot.dto.response.department.DeleteDepartmentResponseDto;
 import com.example.vsc_springboot.dto.response.department.GetAllDepartmentListResponseDto;
 import com.example.vsc_springboot.dto.response.department.PostDepartmentResponseDto;
 import com.example.vsc_springboot.entity.DepartmentEntity;
@@ -65,4 +66,29 @@ public class DepartmentService {
 
         return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
     }
+
+    public ResponseDto<List<DeleteDepartmentResponseDto>> deleteDepartment(String departmentCode) {
+        
+        List<DeleteDepartmentResponseDto> data = null;
+        
+        try {
+
+            boolean hasDepartCode = departmentRepository.existsById(departmentCode);
+            if (!hasDepartCode) return ResponseDto.setFail(ResponseMessage.NOT_EXIST_DEPARTMENT_CODE);
+
+            boolean hasReferencEmployee = employeeRepository.existsByDepartment(departmentCode);
+            if (hasReferencEmployee) return ResponseDto.setFail(ResponseMessage.REFERENCE_EXIST);
+
+            departmentRepository.deleteById(departmentCode);
+
+            List<DepartmentEntity> departmentEntities = departmentRepository.findAll();
+            data = DeleteDepartmentResponseDto.copyList(departmentEntities);
+
+        } catch(Exception exception) {
+            exception.printStackTrace();
+            return ResponseDto.setFail(ResponseMessage.DATABASE_ERROR);
+        }
+        return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
+    }
+    
 }
