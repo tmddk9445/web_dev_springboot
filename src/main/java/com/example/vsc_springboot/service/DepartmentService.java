@@ -1,6 +1,5 @@
 package com.example.vsc_springboot.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +51,7 @@ public class DepartmentService {
 
     public ResponseDto<List<GetAllDepartmentListResponseDto>> getAllDepartmentList() {
 
-        List<GetAllDepartmentListResponseDto> data = new ArrayList<GetAllDepartmentListResponseDto>();
+        List<GetAllDepartmentListResponseDto> data = null;
 
         try {
 
@@ -90,5 +89,5 @@ public class DepartmentService {
         }
         return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
     }
-    
+
 }

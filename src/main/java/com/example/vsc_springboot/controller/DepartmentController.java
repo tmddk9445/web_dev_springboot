@@ -46,8 +46,10 @@ public class DepartmentController {
     }
     
     @DeleteMapping(DELETE_DEPARTMENT)
+    //? Delete http://localhost:4080/apis/department/{departmentCode}
     public ResponseDto<List<DeleteDepartmentResponseDto>> deleteDepartment(@PathVariable("departmentCode") String departmentCode) {
         ResponseDto<List<DeleteDepartmentResponseDto>> response = departmentService.deleteDepartment(departmentCode);
         return response;
     }
+
 }
