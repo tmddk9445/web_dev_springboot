@@ -21,10 +21,11 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	// https://mvnrepository.com/artifact/io.swagger/swagger-annotations
-	implementation group: 'io.swagger', name: 'swagger-annotations', version: '1.6.9'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	// 유효성 검사에 사용되는 라이브러리
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	// https://mvnrepository.com/artifact/io.swagger/swagger-annotations
+	implementation group: 'io.swagger', name: 'swagger-annotations', version: '1.6.9'
 	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
 	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 	compileOnly 'org.projectlombok:lombok'
@@ -32,7 +33,6 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	// implementation 'org.springframework.boot:spring-boot-starter-security'
 	// developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	// testImplementation 'org.springframework.security:spring-security-test'
 
